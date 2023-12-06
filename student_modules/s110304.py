@@ -1,3 +1,5 @@
+from sympy import sympify
+
 def process(message: str) -> str:
     if message == "debug":
         return message
@@ -10,13 +12,11 @@ def process(message: str) -> str:
     elif message == "唉":
         return "唉"
     elif message.startswith("計算"):
-        # 提取計算表達式並計算結果
-        expression = message[2:].strip()  # 去掉前兩個字"計算"，並去除首尾空格
+        expression = message[2:].strip()  # 取得計算表達式
         try:
-            result = eval(expression)  # 使用eval函數計算表達式
-            return str(result)
+            result = sympify(expression)  # 使用 sympy 套件計算
+            return f"計算結果：{result}"
         except Exception as e:
-            return f"計算錯誤：{str(e)}"
+            return f"計算失敗：{str(e)}"
     else:
         return "抱歉，我不知道您在公沙小"
-
