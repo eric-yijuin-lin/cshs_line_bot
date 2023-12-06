@@ -1,5 +1,3 @@
-import re
-
 def chatbot(message: str) -> str:
     message = message.lower()  # 轉換為小寫，以便不區分大小寫
 
