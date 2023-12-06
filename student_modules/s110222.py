@@ -1,11 +1,14 @@
-def process(message: str) -> None:
+def process(message: str) -> str:
     if message == "debug":
         return message
-    if message == "資訊社":
-        return "讚"
-    if message == "資訊老師":
-        return "帥"
-    if message == "資訊社的同學":
-        return "棒"
-    if message == "資訊社的電腦":
-        return "不好說"
+    elif message == "你好臭":
+        return "你好香"
+    elif message == "你好":
+        return "不好"
+    elif message == "123456789+123456789=?":
+        return "=246913578"
+    elif message == "嗨":
+        return "嗨"
+    else:
+        return "未知消息"
+
