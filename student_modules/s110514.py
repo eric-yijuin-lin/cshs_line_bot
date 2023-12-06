@@ -1,4 +1,4 @@
-def chatbot(message: str) -> str:
+def process(message: str) -> str:
     message = message.lower()  # 轉換為小寫，以便不區分大小寫
 
     if "你好" in message:
@@ -29,7 +29,7 @@ def chatbot(message: str) -> str:
         return "如果你喜歡科幻，我推薦《三體》；如果喜歡小說，則《囚鳥》是一本不錯的選擇。"
     elif message.startswith("計算"):
         try:
-            calculation = re.search(r'計算(.+)', message).group(1)
+            calculation = message[2:].strip()  # 取得 "計算" 之後的部分，並移除空白
             result = eval(calculation)
             return f"計算結果是: {result}"
         except Exception as e:
